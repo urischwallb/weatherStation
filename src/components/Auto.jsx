@@ -1,9 +1,15 @@
 import React from 'react'
 
 export default function Auto(props) {
+    const click = () => {
+        props.setSearchAuto(props.val.LocalizedName);
+        props.setSearch(props.val.LocalizedName);
+        props.setServerFlag(!props.serverFlag)
+        props.dataSet('');
+    }
     return (
-        <div onClick={() => { props.setSearchAuto(props.val.LocalizedName) /* alert(`you click - ${props.val.LocalizedName}`) */ }}>
-            <p style={{background:'gray'}}>{props.val.LocalizedName}</p>
+        <div onClick={() => { click() }}>
+            <p style={{ background: 'gray' }}>{props.val.LocalizedName}</p>
         </div>
     )
 }

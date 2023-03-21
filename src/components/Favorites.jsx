@@ -4,8 +4,8 @@ import Box from './Box'
 export default function Favorites(props) {
 
   const favoritesDisplay = () => (
-    props.favorites.map((val, ind) => (
-      <Box arr={props.favorites} set={props.setFavorites} data={{ city: val.city, temp: val.temp ,id: ind}} />
+    props.favorites.map((val, ind,arr) => (
+      <Box arr={arr} set={props.setFavorites} data={{ city: val.city, temp: val.temp ,id: ind}} />
       ))
     )
   return (

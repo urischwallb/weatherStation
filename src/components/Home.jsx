@@ -5,196 +5,21 @@ import Auto from './Auto'
 
 export default function Home(props) {
   const [serverFlag, setServerFlag] = useState(false)
-  const [key, setKey] = useState('jVqnIdjGDoRNAldk0PzUM7SUuL6wWnfB')
+  const [key, setKey] = useState('FARSuNdGnxqZRvwyJhPfpTF7wOlZoN0u')
   const [searchAuto, setSearchAuto] = useState('')
   const [searchAutocompData, setSearchAutocompData] = useState('')//data
   const [cityKey, setCityKey] = useState('')
   const [forecasts5, setForecasts5] = useState('')
-  /*   [
-      {
-        "Date": "2023-03-21T07:00:00+00:00",
-        "EpochDate": 1679382000,
-        "Temperature": {
-          "Minimum": {
-            "Value": 10.4,
-            "Unit": "C",
-            "UnitType": 17
-          },
-          "Maximum": {
-            "Value": 15.2,
-            "Unit": "C",
-            "UnitType": 17
-          }
-        },
-        "Day": {
-          "Icon": 14,
-          "IconPhrase": "Partly sunny w/ showers",
-          "HasPrecipitation": true,
-          "PrecipitationType": "Rain",
-          "PrecipitationIntensity": "Light"
-        },
-        "Night": {
-          "Icon": 12,
-          "IconPhrase": "Showers",
-          "HasPrecipitation": true,
-          "PrecipitationType": "Rain",
-          "PrecipitationIntensity": "Light"
-        },
-        "Sources": [
-          "AccuWeather"
-        ],
-        "MobileLink": "http://www.accuweather.com/en/gb/london/ec4a-2/daily-weather-forecast/328328?day=1&unit=c&lang=en-us",
-        "Link": "http://www.accuweather.com/en/gb/london/ec4a-2/daily-weather-forecast/328328?day=1&unit=c&lang=en-us"
-      },
-      {
-        "Date": "2023-03-22T07:00:00+00:00",
-        "EpochDate": 1679468400,
-        "Temperature": {
-          "Minimum": {
-            "Value": 9,
-            "Unit": "C",
-            "UnitType": 17
-          },
-          "Maximum": {
-            "Value": 14.6,
-            "Unit": "C",
-            "UnitType": 17
-          }
-        },
-        "Day": {
-          "Icon": 12,
-          "IconPhrase": "Showers",
-          "HasPrecipitation": true,
-          "PrecipitationType": "Rain",
-          "PrecipitationIntensity": "Light"
-        },
-        "Night": {
-          "Icon": 40,
-          "IconPhrase": "Mostly cloudy w/ showers",
-          "HasPrecipitation": true,
-          "PrecipitationType": "Rain",
-          "PrecipitationIntensity": "Light"
-        },
-        "Sources": [
-          "AccuWeather"
-        ],
-        "MobileLink": "http://www.accuweather.com/en/gb/london/ec4a-2/daily-weather-forecast/328328?day=2&unit=c&lang=en-us",
-        "Link": "http://www.accuweather.com/en/gb/london/ec4a-2/daily-weather-forecast/328328?day=2&unit=c&lang=en-us"
-      },
-      {
-        "Date": "2023-03-23T07:00:00+00:00",
-        "EpochDate": 1679554800,
-        "Temperature": {
-          "Minimum": {
-            "Value": 7.9,
-            "Unit": "C",
-            "UnitType": 17
-          },
-          "Maximum": {
-            "Value": 14,
-            "Unit": "C",
-            "UnitType": 17
-          }
-        },
-        "Day": {
-          "Icon": 18,
-          "IconPhrase": "Rain",
-          "HasPrecipitation": true,
-          "PrecipitationType": "Rain",
-          "PrecipitationIntensity": "Light"
-        },
-        "Night": {
-          "Icon": 35,
-          "IconPhrase": "Partly cloudy",
-          "HasPrecipitation": false
-        },
-        "Sources": [
-          "AccuWeather"
-        ],
-        "MobileLink": "http://www.accuweather.com/en/gb/london/ec4a-2/daily-weather-forecast/328328?day=3&unit=c&lang=en-us",
-        "Link": "http://www.accuweather.com/en/gb/london/ec4a-2/daily-weather-forecast/328328?day=3&unit=c&lang=en-us"
-      },
-      {
-        "Date": "2023-03-24T07:00:00+00:00",
-        "EpochDate": 1679641200,
-        "Temperature": {
-          "Minimum": {
-            "Value": 7.6,
-            "Unit": "C",
-            "UnitType": 17
-          },
-          "Maximum": {
-            "Value": 13,
-            "Unit": "C",
-            "UnitType": 17
-          }
-        },
-        "Day": {
-          "Icon": 12,
-          "IconPhrase": "Showers",
-          "HasPrecipitation": true,
-          "PrecipitationType": "Rain",
-          "PrecipitationIntensity": "Light"
-        },
-        "Night": {
-          "Icon": 36,
-          "IconPhrase": "Intermittent clouds",
-          "HasPrecipitation": false
-        },
-        "Sources": [
-          "AccuWeather"
-        ],
-        "MobileLink": "http://www.accuweather.com/en/gb/london/ec4a-2/daily-weather-forecast/328328?day=4&unit=c&lang=en-us",
-        "Link": "http://www.accuweather.com/en/gb/london/ec4a-2/daily-weather-forecast/328328?day=4&unit=c&lang=en-us"
-      },
-      {
-        "Date": "2023-03-25T07:00:00+00:00",
-        "EpochDate": 1679727600,
-        "Temperature": {
-          "Minimum": {
-            "Value": 5.6,
-            "Unit": "C",
-            "UnitType": 17
-          },
-          "Maximum": {
-            "Value": 13.6,
-            "Unit": "C",
-            "UnitType": 17
-          }
-        },
-        "Day": {
-          "Icon": 13,
-          "IconPhrase": "Mostly cloudy w/ showers",
-          "HasPrecipitation": true,
-          "PrecipitationType": "Rain",
-          "PrecipitationIntensity": "Light"
-        },
-        "Night": {
-          "Icon": 35,
-          "IconPhrase": "Partly cloudy",
-          "HasPrecipitation": false
-        },
-        "Sources": [
-          "AccuWeather"
-        ],
-        "MobileLink": "http://www.accuweather.com/en/gb/london/ec4a-2/daily-weather-forecast/328328?day=5&unit=c&lang=en-us",
-        "Link": "http://www.accuweather.com/en/gb/london/ec4a-2/daily-weather-forecast/328328?day=5&unit=c&lang=en-us"
-      }
-    ] */
+  const [currentcondition, setCurrentcondition] = useState('')
 
-  const [valueSearch, setValueSearch] = useState('')
-
-
-
-
-
-  useEffect(() => {
+  useEffect(() => {//autocompleate
     fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${key}&q=${searchAuto}`)
       .then((res) => { return res.json() })
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         setSearchAutocompData(data)
       })
+
   }, [searchAuto])
 
   useEffect(() => {
@@ -205,9 +30,10 @@ export default function Home(props) {
         if (data.length === 0) {
           alert('city not found')
         } else {
-          setCityKey(data[0].Key)
+          setCityKey(data[0].Key);
         }
       })
+
   }, [serverFlag])
 
   useEffect(() => {//error
@@ -219,11 +45,20 @@ export default function Home(props) {
       .then((data) => {
         // console.log(data.DailyForecasts)
         setForecasts5(data.DailyForecasts)
+        if (searchAutocompData != '') {
+          setSearchAutocompData('')
+
+        }
+      })
+    fetch(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${key}`)
+      .then((res) => { return res.json() })
+      .then((data) => {
+        setCurrentcondition(data)
       })
   }, [cityKey])
 
   const favoritesUpload = () => {
-    let data = { city: props.search, cityKey: cityKey, temp: `${forecasts5[0].Temperature.Maximum.Value}` };
+    let data = { city: props.search, cityKey: cityKey, temp: `${currentcondition[0].Temperature.Metric.Value}` };
     // console.log(data)
     let cheacker = false;
     props.favorites.forEach((val, ind) => {
@@ -233,7 +68,7 @@ export default function Home(props) {
     })
 
     if (cheacker == true) {
-      alert('its already exsist in favorites')
+      alert('its already exist in favorites')
     } else {
       props.setFavorites([...props.favorites, data])
     }
@@ -242,7 +77,7 @@ export default function Home(props) {
   const autocomp = () => (
     searchAutocompData == '' ? null :
       searchAutocompData.map((val, ind) => {
-        return <Auto setSearch={props.setSearch} setSearchAuto ={setSearchAuto} val={searchAutocompData[ind]} />
+        return <Auto setServerFlag={setServerFlag} serverFlag={serverFlag} setSearch={props.setSearch} dataSet={setSearchAutocompData} setSearchAuto={setSearchAuto} val={searchAutocompData[ind]} />
       })
   )
 
@@ -256,7 +91,7 @@ export default function Home(props) {
 
   const searchFunc = (value) => {
     if (value.charAt(value.length - 1) == '' || value.charAt(value.length - 1) == ' ') {
-
+      setSearchAuto(value)
     }
     else if (value.charAt(value.length - 1) <= 'z' && value.charAt(value.length - 1) >= 'a' || value.charAt(value.length - 1) <= 'Z' && value.charAt(value.length - 1) >= 'A') {
       setSearchAuto(value)
@@ -273,12 +108,11 @@ export default function Home(props) {
         <button onClick={() => { favoritesUpload() }}>Add to Favorites</button><br />
         <input onChange={(e) => { searchFunc(e.target.value) }} type="text" placeholder={props.search == '' ? 'Enter Place...' : props.search} />
         {searchAutocompData == null ? [] : autocomp()}
-        <button onClick={() => { if (valueSearch != '') { setServerFlag(!serverFlag); props.setSearch(valueSearch) } else { alert('empty data') } }}>search</button>
       </div>
       <div>
         <h2>{props.search}</h2>   {/* city name */}
-        <p>{forecasts5 == '' ? null : forecasts5[0].Temperature.Maximum.Value + '°C'}</p> {/* city Temperature */}
-        <h3>{forecasts5 == '' ? null : forecasts5[0].Day.IconPhrase}</h3> {/* city Temperature desc */}
+        <p>{currentcondition == '' ? null : currentcondition[0].Temperature.Metric.Value + '°C'}</p> {/* city Temperature */}
+        <h3>{currentcondition == '' ? null : currentcondition[0].WeatherText}</h3> {/* city Temperature desc */}
       </div>
       <div className='boxFlx' style={{ display: 'flex', justifyContent: 'space-evenly' }}> {/* 5 day box */}
         {forecasts5 == '' ? null : forecastdisplay()}
