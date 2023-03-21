@@ -5,7 +5,7 @@ import Auto from './Auto'
 
 export default function Home(props) {
   const [serverFlag, setServerFlag] = useState(false)
-  const [key, setKey] = useState('FARSuNdGnxqZRvwyJhPfpTF7wOlZoN0u')
+  const [key, setKey] = useState('O1meYMyToHsQgKXRwxgffQI74sls7bH5')
   const [searchAuto, setSearchAuto] = useState('')
   const [searchAutocompData, setSearchAutocompData] = useState('')//data
   const [cityKey, setCityKey] = useState('')
@@ -107,14 +107,16 @@ export default function Home(props) {
       <div>
         <button onClick={() => { favoritesUpload() }}>Add to Favorites</button><br />
         <input onChange={(e) => { searchFunc(e.target.value) }} type="text" placeholder={props.search == '' ? 'Enter Place...' : props.search} />
-        {searchAutocompData == null ? [] : autocomp()}
+        <div>
+          {searchAutocompData == null ? [] : autocomp()}
+        </div>
       </div>
       <div>
         <h2>{props.search}</h2>   {/* city name */}
         <p>{currentcondition == '' ? null : currentcondition[0].Temperature.Metric.Value + '°C'}</p> {/* city Temperature */}
         <h3>{currentcondition == '' ? null : currentcondition[0].WeatherText}</h3> {/* city Temperature desc */}
       </div>
-      <div className='boxFlx' style={{ display: 'flex', justifyContent: 'space-evenly' }}> {/* 5 day box */}
+      <div className='boxFlx' style={{ display: 'flex', justifyContent: 'space-evenly' }}> {/* 5-day box */}
         {forecasts5 == '' ? null : forecastdisplay()}
       </div>
     </div>

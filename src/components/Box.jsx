@@ -12,7 +12,8 @@ export default function Box(props) {
         }
     }
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: "solid 1px black", width: '100px', height: '75px' }}>
+        <div style={{ borderRadius:"20px", display: 'flex', flexDirection: 'column', alignItems: 'center',
+         justifyContent: 'space-evenly', border: "solid 1px black", width: '100px', height: '100px' }}>
             {btn()}
             {props.data.city}
             {props.data.day}<br />

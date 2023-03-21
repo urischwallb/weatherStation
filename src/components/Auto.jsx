@@ -8,7 +8,7 @@ export default function Auto(props) {
         props.dataSet('');
     }
     return (
-        <div onClick={() => { click() }}>
+        <div  onClick={() => { click() }}>
             <p style={{ background: 'gray' }}>{props.val.LocalizedName}</p>
         </div>
     )
