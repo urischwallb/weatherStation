@@ -9,8 +9,7 @@ import Home from './components/Home';
 function App() {
 
   const [search, setSearch] = useState('tel aviv')
-  const [key, setKey] = useState('4AtsgHysNBEIrLBRuVaxaT1VOxpyLd2o')
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState([{city: 'tel aviv', temp: '25'},{city: 'london', temp: '15'}])
   const week = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
   const fetchfunc = (url, type, data) => {

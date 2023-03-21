@@ -3,7 +3,7 @@ import Box from './Box'
 
 export default function Home(props) {
   const [serverFlag, setServerFlag] = useState(false)
-  const [key, setKey] = useState('4AtsgHysNBEIrLBRuVaxaT1VOxpyLd2o')
+  const [key, setKey] = useState(/* 'wDHAL9z8AeZdxAQb8rhCXZeGKAcXcYFu' */)
   const [cityKey, setCityKey] = useState('')
   const [forecasts5, setForecasts5] = useState('')
   const [valueSearch, setValueSearch] = useState('')
@@ -25,11 +25,17 @@ export default function Home(props) {
       })
   }, [cityKey])
 
+  const favoritesUp = () => {
+    let data = {city: `${props.search}` ,temp: `${forecasts5[0].Temperature.Maximum.Value }`};
+    console.log(data)
+    props.setFavorites([...props.favorites ,data]) 
+  }
+
   const forecastdisplay = () => (
     forecasts5.map((val, ind) => {
       const d = new Date(forecasts5[ind].Date);
       let day = d.getDay();
-     return <Box data={{ day: props.week[day], temp: forecasts5[ind].Temperature.Maximum.Value }} />
+     return <Box  data={{ day: props.week[day], temp: forecasts5[ind].Temperature.Maximum.Value }} />
     })
   )
   const searchFunc = (value) => {
@@ -47,7 +53,7 @@ export default function Home(props) {
   return (
     <div>
       <div>
-        <button onClick={() => {props.setFavorites([/* ...props.favorites +  */{city: `${props.search}` ,temp: `${forecasts5[0].Temperature.Maximum.Value }`}]) }}>Add to Favorites</button><br />
+        <button onClick={() => {favoritesUp()}}>Add to Favorites</button><br />
         <input onChange={(e) => { searchFunc(e.target.value) }} type="text" placeholder='Enter Place...' />
         <button onClick={() => { setServerFlag(!serverFlag);props.setSearch(valueSearch) }}>search</button>
       </div>
