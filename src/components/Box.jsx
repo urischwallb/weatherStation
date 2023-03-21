@@ -4,8 +4,8 @@ export default function Box(props) {
     const btn = () => {
         if (props.data.city != undefined) {
             return <button onClick={() => {
-                props.arr.splice(props.index, 1)
-                props.set(props.arr)
+                props.arr.splice(props.data.id, 1)
+                props.set([...props.arr])
             }}>x</button>
         } else {
             return null
