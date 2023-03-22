@@ -5,7 +5,7 @@ import Auto from './Auto'
 
 export default function Home(props) {
   const [serverFlag, setServerFlag] = useState(false)
-  const [key, setKey] = useState('O1meYMyToHsQgKXRwxgffQI74sls7bH5')
+  const [key, setKey] = useState('7mSdKm8srsds70XUngSzN7J23Grouk9G')
   const [searchAuto, setSearchAuto] = useState('')
   const [searchAutocompData, setSearchAutocompData] = useState('')//data
   const [cityKey, setCityKey] = useState('')
@@ -15,9 +15,11 @@ export default function Home(props) {
   useEffect(() => {//autocompleate
     fetch(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${key}&q=${searchAuto}`)
       .then((res) => { return res.json() })
-      .then((data) => {
-        // console.log(data)
+      .then((data) => {if (data.length === 0) {
+        alert('error not found autocomplete')
+      } else {
         setSearchAutocompData(data)
+            }
       })
 
   }, [searchAuto])
@@ -28,7 +30,7 @@ export default function Home(props) {
       .then((data) => {
         // console.log(data[0])
         if (data.length === 0) {
-          alert('city not found')
+          alert('error city not found')
         } else {
           setCityKey(data[0].Key);
         }
@@ -47,7 +49,6 @@ export default function Home(props) {
         setForecasts5(data.DailyForecasts)
         if (searchAutocompData != '') {
           setSearchAutocompData('')
-
         }
       })
     fetch(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${key}`)
@@ -107,7 +108,7 @@ export default function Home(props) {
       <div>
         <button onClick={() => { favoritesUpload() }}>Add to Favorites</button><br />
         <input onChange={(e) => { searchFunc(e.target.value) }} type="text" placeholder={props.search == '' ? 'Enter Place...' : props.search} />
-        <div>
+        <div className='flx'>
           {searchAutocompData == null ? [] : autocomp()}
         </div>
       </div>
