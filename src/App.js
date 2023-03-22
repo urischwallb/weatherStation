@@ -8,7 +8,7 @@ import img from './components/nature.png';
 
 
 function App() {
-  
+
 
   const [search, setSearch] = useState('tel aviv')
   const [favorites, setFavorites] = useState([/* {city: 'tel aviv', temp: '25'},{city: 'london', temp: '15'} */])
@@ -79,8 +79,8 @@ function App() {
       <BrowserRouter>
       <Menu />
         <Routes>
-          <Route path='/' element={<Home fetchfunc={fetchfunc} setSearch={setSearch} search={search} week={week} favorites={favorites} setFavorites={setFavorites} />} />
-          <Route path='/favorites' element={<Favorites fetchfunc={fetchfunc} favorites={favorites} setFavorites={setFavorites} />} />
+          <Route path='./' element={<Home fetchfunc={fetchfunc} setSearch={setSearch} search={search} week={week} favorites={favorites} setFavorites={setFavorites} />} />
+          <Route path='./favorites' element={<Favorites fetchfunc={fetchfunc} favorites={favorites} setFavorites={setFavorites} />} />
         </Routes>
       </BrowserRouter>
     </div>
