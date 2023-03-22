@@ -17,7 +17,13 @@
   display: flex;
 }
 
-
+.boxFlx {
+  flex-direction: row;
+  align-items: space-evenly;
+  gap: 10px;
+  align-items: center;
+  height: 500px;
+}
 @media(max-width: 768px) {
   .boxFlx {
     flex-direction: column;

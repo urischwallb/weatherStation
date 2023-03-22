@@ -6,7 +6,7 @@ import Auto from './Auto'
 
 export default function Home(props) {
   const [serverFlag, setServerFlag] = useState(false)
-  const [key, setKey] = useState('ZulASkKdIby9838aoICuO53fG5Ldnagt')
+  const [key, setKey] = useState('B5DiCfA56zgzbCokmHa5iKTvJDRP1Dmo')
   const [searchAuto, setSearchAuto] = useState('')
   const [searchAutocompData, setSearchAutocompData] = useState('')//data
   const [cityKey, setCityKey] = useState('')
