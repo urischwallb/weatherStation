@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Menu from './components/Menu';
 import Favorites from './components/Favorites';
 import Home from './components/Home';
+import img from './components/nature.png';
 
 
 function App() {
@@ -72,7 +73,9 @@ function App() {
 
 
   return (
-    <div className='App'>
+    <div className='App' style={
+      {backgroundImage: `url(${img})` ,backgroundRepeat: "repeat", backgroundSize: "cover"}
+      }>
       <BrowserRouter>
       <Menu />
         <Routes>

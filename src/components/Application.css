@@ -23,7 +23,8 @@
     flex-direction: column;
     align-items: space-evenly;
     gap: 10px;
-    align-items: center
+    align-items: center;
+    /* background-color: honeydew; */
   }
 
   .flx {

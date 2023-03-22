@@ -12,7 +12,7 @@ export default function Box(props) {
         }
     }
     return (
-        <div style={{ borderRadius:"20px", display: 'flex', flexDirection: 'column', alignItems: 'center',
+        <div style={{ backgroundColor: 'honeydew',borderRadius:"20px", display: 'flex', flexDirection: 'column', alignItems: 'center',
          justifyContent: 'space-evenly', border: "solid 1px black", width: '100px', height: '100px' }}>
             {btn()}
             {props.data.city}

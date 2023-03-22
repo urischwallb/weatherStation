@@ -3,9 +3,10 @@ import Box from './Box'
 import './Application.css'
 import Auto from './Auto'
 
+
 export default function Home(props) {
   const [serverFlag, setServerFlag] = useState(false)
-  const [key, setKey] = useState('7mSdKm8srsds70XUngSzN7J23Grouk9G')
+  const [key, setKey] = useState('ZulASkKdIby9838aoICuO53fG5Ldnagt')
   const [searchAuto, setSearchAuto] = useState('')
   const [searchAutocompData, setSearchAutocompData] = useState('')//data
   const [cityKey, setCityKey] = useState('')
@@ -104,7 +105,7 @@ export default function Home(props) {
 
 
   return (
-    <div>
+    <div >
       <div>
         <button onClick={() => { favoritesUpload() }}>Add to Favorites</button><br />
         <input onChange={(e) => { searchFunc(e.target.value) }} type="text" placeholder={props.search == '' ? 'Enter Place...' : props.search} />
